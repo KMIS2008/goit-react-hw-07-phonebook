@@ -6,9 +6,9 @@ import { FormStyle,
          ErrorMsg} from './FormAdContact.styled';
 import * as Yup from 'yup';
 
-import { addContact } from 'redux/contactSlice';
+import { addContact } from 'redux/operations';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts } from 'redux/selects'; 
+import { selectContacts } from 'redux/selects'; 
  
          const SignupSchema = Yup.object().shape({
            name: Yup.string()
@@ -21,7 +21,7 @@ import { getContacts } from 'redux/selects';
          });
 
 export const FormAddContact = ()=> {
-const contacts = useSelector(getContacts);
+const contacts = useSelector(selectContacts);
 const dispatch = useDispatch();
 
 const addContacts =(newContact)=> {

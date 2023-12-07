@@ -3,7 +3,7 @@ import {FormFilter,
         InputFilter,
         TitleFilter} from './Filter.styled';
 
-import { getFilterValue } from 'redux/selects'; 
+import { selectFilter } from 'redux/selects'; 
 import { useSelector, useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/filterSlice';
 import { nanoid } from '@reduxjs/toolkit';
@@ -12,7 +12,7 @@ const filterId= nanoid();
 
 export const FilterConctacts = ()=>{
 
-const filter = useSelector(getFilterValue);
+const filter = useSelector(selectFilter);
 const dispatch = useDispatch();
 
 return(
